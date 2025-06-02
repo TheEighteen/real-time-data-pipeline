@@ -18,7 +18,7 @@ This project demonstrates the implementation of a real-time data pipeline using 
 
 ## 📌 Project Architecture
 
-graph TD;
+## graph TD;
     A[Web API (Data Producer)] --> B[Apache NiFi]
     B --> C[Apache Kafka]
     C --> D[Apache Spark (Structured Streaming)]
