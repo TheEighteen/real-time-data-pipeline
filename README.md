@@ -1,17 +1,26 @@
-🎯 Project Overview: Real-time Data Pipeline Implementation
+# 🚀 Real-Time Data Pipeline with Apache NiFi, Kafka, and Spark
 
-🚀 In this project, I built a robust real-time data pipeline integrating several modern technologies for efficient data ingestion, transformation, and storage.
+This project demonstrates the implementation of a real-time data pipeline using a modern data engineering stack. It showcases real-time ingestion, processing, and storage of streaming data—ideal for analytics, monitoring, or alerting systems.
 
-🔗 Tech Stack & Workflow:
+---
 
-Web API – Acts as the data source, streaming real-time events/data.
+## 🛠 Tech Stack
 
-Apache NiFi – Handles data ingestion with easy flow management and routing logic.
+| Component           | Purpose                                              |
+|---------------------|------------------------------------------------------|
+| **Web API (Python)**| Simulates real-time data production                  |
+| **Apache NiFi**     | Ingests data, performs basic transformation/routing  |
+| **Apache Kafka**    | Acts as the message broker for real-time streams     |
+| **Apache Spark (Scala)** | Consumes Kafka topics, processes the stream   |
+| **Local Storage**   | Stores transformed data (CSV/Parquet)                |
 
-Apache Kafka – Provides a scalable and fault-tolerant messaging layer for real-time streaming.
+---
 
-Apache Spark with Scala – Consumes Kafka streams, performs real-time data processing and transformation using DataFrames.
+## 📌 Project Architecture
 
-Local Storage – Stores the final transformed data locally for quick access or further analysis.
-
-📊 This setup ensures low-latency processing, scalability, and modularity, making it suitable for real-time analytics or monitoring solutions.
+```mermaid
+graph TD;
+    A[Web API (Data Producer)] --> B[Apache NiFi]
+    B --> C[Apache Kafka]
+    C --> D[Apache Spark (Structured Streaming)]
+    D --> E[Local Storage (CSV)]
